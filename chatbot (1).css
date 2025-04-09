@@ -1,0 +1,232 @@
+/* --------------------------
+   Chatbot & Hamburger Styles
+--------------------------- */
+
+/* Chatbot Container */
+#chatbot-container {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  max-width: 380px; 
+  height: 600px;
+  background-color: #1f1f1f;
+  border: 1px solid #00ffcc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  flex-direction: column;
+  display: flex;
+  z-index: 9999;
+}
+
+/* Hamburger Icon (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Navigation Menu default (desktop) */
+#navMenu {
+  display: block;
+}
+
+/* Chatbot Header */
+.chatbot-header {
+  background-color: #1f1f1f;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #00ffcc;
+}
+.chatbot-header h3 {
+  margin: 0;
+  color: #00ffcc;
+  font-size: 18px;
+}
+.chatbot-header p {
+  margin: 3px 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* Chatbox */
+.chatbox {
+  flex: 1;
+  padding: 10px;
+  background-color: #2a2a2a;
+  overflow-y: auto;
+}
+
+/* Input and Buttons */
+#userInput {
+  width: 95%;
+  padding: 10px;
+  margin: 0 10px 10px 10px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+button {
+  padding: 10px 15px;
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+}
+button:hover {
+  background-color: #009988;
+}
+
+/* Message Styles */
+.message {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  max-width: 90%;
+}
+.user-message {
+  background-color: #2a2a2a;
+  color: #fff;
+  text-align: right;
+  margin-left: auto;
+  border: 1px solid #00ffcc;
+}
+.bot-message {
+  background-color: #1f1f1f;
+  color: #00ffcc;
+  text-align: left;
+  border: 1px solid #444;
+}
+.typing {
+  color: #aaa;
+  font-style: italic;
+}
+.bot-content {
+  text-align: left;
+  padding: 5px 0;
+}
+
+/* Quick Questions */
+.quick-questions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+.quick-questions button {
+  font-size: 13px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00ffcc;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  white-space: normal;
+  line-height: 1.3;
+}
+.quick-questions button:hover {
+  background-color: #00e6b3;
+}
+
+/* Chatbot Floating Icon */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00ffcc;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10000;
+}
+#chatbot-icon:hover {
+  background-color: #009988;
+}
+#chatbot-container button.send-btn {
+  width: calc(100% - 20px);
+  margin: 0 10px 10px 10px;
+  padding: 10px;
+  background-color: #00ffcc;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Mobile Styles for Navigation & Hamburger */
+@media (max-width: 480px) {
+  /* Hide nav menu by default */
+  #navMenu {
+    display: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+  /* When nav menu is active, display it */
+  #navMenu.active {
+    display: block;
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #navMenu ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+  }
+  #navMenu ul li {
+    margin: 5px 0;
+    font-size: 1rem;
+  }
+  #navMenu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 0;
+    display: block;
+  }
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: block;
+  }
+}
+
+/* Tablet and Desktop Adjustments */
+@media (min-width: 481px) and (max-width: 1024px) {
+  #chatbot-container {
+    width: 95%;
+    right: 2.5%;
+    bottom: 100px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .quick-questions button {
+    width: 100%;
+    margin: 5px 0;
+  }
+  #userInput {
+    width: 80%;
+  }
+  #chatbot-icon {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none !important;
+  }
+}
